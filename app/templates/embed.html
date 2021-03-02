@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% for section, values in script.items() %}
+<section class="page-section bg-primary text-white mb-0" id="section-{{ section }}">
+    <div class="col-lg-12 col-md-12 mb-4 mt-4">
+        <div class="card" style="border-radius:0px; font-size:larger;color:#570303;background-color: #f6d4d4 ;">
+            <div class="card-body">
+                <h2 class="card-title">
+                    {% include '/'.join([section, 'panel.html']) %}
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% for subsection, ss_values in values.items() %}
+<div class="scrolling-wrapper row flex-row flex-nowrap ml-0">
+    <div class="row mb-4">
+        <div class="col-sm">
+            <div class="card text shadow-none">
+                <h5 class="card-header" style="border-color: transparent;color: black;">
+                    {% include '/'.join([section, subsection, 'subsection_header.html']) %}
+                </h5>
+                <div class="card-body" style="color: #383838;">
+                    {% include '/'.join([section, subsection, 'text.html']) %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card border text-black">
+                <!-- Tabs content -->
+                <div class="tab-content" id="ex1-content">
+                    <div class="tab-pane show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1"
+                        style="height: 590px;overflow-y: auto;">
+                        <div class="card-body">
+                            {{ ss_values['chart']|safe }}
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2"
+                        style="height: 590px;overflow-y: auto;">
+                        <div class="card-body">
+                            {{ ss_values['map']|safe }}
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3"
+                        style="height: 590px;overflow-y: auto;">
+                        <div class="card-header mt-0 mb-0" style="border-color: transparent;">
+                            <h2 class="card-title">Sources</h5>
+                        </div>
+                        <div class="card-body mt-0 mb-0">
+                            {% include '/'.join([section, subsection, 'table.html']) %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabs content -->
+                <!-- Tabs navs -->
+                <ul class="nav nav-tabs nav-justified mb-0" id="ex1" role="tablist">
+                    <li class="nav-item border" role="presentation">
+                        <a class="nav-link active" style="padding-top: 6px;padding-bottom: 6px;font-size: 14px;"
+                            id="ex1-tab-1" data-mdb-toggle="tab" href={{ "#ex" +ss_values['ex']+"-tabs-1" }} role="tab"
+                            aria-controls="ex1-tabs-1" aria-selected="true">Chart</a>
+                    </li>
+                    <li class="nav-item border" role="presentation">
+                        <a class="nav-link" style="padding-top: 6px;padding-bottom: 6px;font-size: 14px;" id="ex1-tab-2"
+                            data-mdb-toggle="tab" href={{ "#ex" +ss_values['ex']+"-tabs-2" }} role="tab"
+                            aria-controls={{ "ex" +ss_values['ex']+"-tabs-2" }} aria-selected="false">Map</a>
+                    </li>
+                    <li class="nav-item border" role="presentation">
+                        <a class="nav-link" style="padding-top: 6px;padding-bottom: 6px;font-size: 14px;" id={{ "ex"
+                            +ss_values['ex']+"-tabs-3" }} data-mdb-toggle="tab" href={{ "#ex" +ss_values['ex']+"-tabs-3"
+                            }} role="tab" aria-controls={{ "ex" +ss_values['ex']+"-tabs-3" }}
+                            aria-selected="false">Sources</a>
+                    </li>
+                </ul>
+                <!-- Tabs navs -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endfor %}
+
+<!-- <div class="scrolling-wrapper row flex-row flex-nowrap">
+    <div class="row mb-4">
+        <div class="col-sm">
+            <div class="card text-black shadow-none">
+                <h5 class="card-header" style="border-color: transparent;">Featured</h5>
+                <div class="card-body">
+                    <p class="card-text">The starting state of the menu will appear collapsed on
+                        smaller screens, and
+                        will
+                        appear non-collapsed on larger screens. When toggled using the button below,
+                        the
+                        menu will change. Make sure to keep all page content within the
+                        <code>#page-content-wrapper</code>. The top navbar is optional, and just for
+                        demonstration. Just create an element with the <code>#menu-toggle</code> ID
+                        which will toggle the menu when clicked. If you’re using navs to provide a
+                        navigation bar, be sure to add a role="navigation" to the most logical
+                        parent
+                        container of the ul or wrap a nav element around the whole navigation. Do
+                        not
+                        add the role to the itself, as this would prevent it from being announced as
+                        an actual list by assistive technologies. The starting state of the menu
+                        will
+                        appear
+                        collapsed on smaller screens, and will appear non-collapsed on larger
+                        screens.
+                    </p>
+                    <p class="card-text">When
+                        toggled using the button below, the menu will change. Make sure to keep all
+                        page
+                        content within the <code>#page-content-wrapper</code>. The top navbar is
+                        optional,
+                        and just for demonstration. Just create an element with the
+                        <code>#menu-toggle</code> ID which will toggle the menu when clicked. If
+                        you’re
+                        using navs to provide a
+                        navigation bar, be sure to add a role="navigation" to the most logical
+                        parent
+                        container of the ul or wrap a nav element around the whole navigation. Do
+                        not
+                        add the role to the itself, as this would prevent it from being announced as
+                        an actual list by assistive technologies.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card border text-black">
+                <div class="tab-content" id="ex2-content">
+                    <div class="tab-pane show active" id="ex2-tabs-1" role="tabpanel" aria-labelledby="ex2-tab-1"
+                        style="height: 590px;overflow-y: auto;">
+                        <div class="card-body">
+                            {{ script.one|safe }}
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="ex2-tabs-2" role="tabpanel" aria-labelledby="ex2-tab-2"
+                        style="height: 590px;overflow-y: auto;">
+                        <div class="card-body">
+                            {{ script.one|safe }}
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="ex2-tabs-3" role="tabpanel" aria-labelledby="ex2-tab-3"
+                        style="height: 590px;overflow-y: auto;">
+                        <div class="card-body">
+                            <caption>
+                                List of users
+                            </caption>
+                            <table class="table">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav nav-tabs nav-justified mb-0" id="ex2" role="tablist">
+                    <li class="nav-item border" role="presentation">
+                        <a class="nav-link active" style="padding-top: 6px;padding-bottom: 6px;font-size: 14px;"
+                            id="ex2-tab-1" data-mdb-toggle="tab" href="#ex2-tabs-1" role="tab"
+                            aria-controls="ex2-tabs-1" aria-selected="true">Chart</a>
+                    </li>
+                    <li class="nav-item border" role="presentation">
+                        <a class="nav-link" style="padding-top: 6px;padding-bottom: 6px;font-size: 14px;" id="ex2-tab-2"
+                            data-mdb-toggle="tab" href="#ex2-tabs-2" role="tab" aria-controls="ex2-tabs-2"
+                            aria-selected="false">Map</a>
+                    </li>
+                    <li class="nav-item border" role="presentation">
+                        <a class="nav-link" style="padding-top: 6px;padding-bottom: 6px;font-size: 14px;" id="ex2-tab-3"
+                            data-mdb-toggle="tab" href="#ex2-tabs-3" role="tab" aria-controls="ex2-tabs-3"
+                            aria-selected="false">Sources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> -->
+{% endblock %}

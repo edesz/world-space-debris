@@ -1,0 +1,11 @@
+version: '3'  # version of compose format 
+
+services:
+  api-service:
+    build:
+      context: .
+      dockerfile: ./app/Dockerfile
+    volumes:
+      - ${PWD}/app/data:/app/data/
+    ports:
+      - 8000:8000

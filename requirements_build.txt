@@ -1,0 +1,10 @@
+nodeenv
+jupyter
+nb_black
+bokeh
+requests
+pandas
+geopandas
+pycountry
+fastparquet
+pyarrow
