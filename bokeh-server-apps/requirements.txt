@@ -1,5 +1,6 @@
 bokeh
 requests
+numpy
 pandas
 geopandas
 pycountry
