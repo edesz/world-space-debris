@@ -12,7 +12,6 @@ from src.data_loader import get_line_chart_data
 
 PROJ_ROOT_DIR = os.getcwd()
 # PROJ_ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
-# print(PROJ_ROOT_DIR)
 bk_theme_filepath = os.path.join(PROJ_ROOT_DIR, "theme.yaml")
 who_gho_processed_data_file_path = os.path.join(
     PROJ_ROOT_DIR, "data", "raw", "data.parquet.gzip"
