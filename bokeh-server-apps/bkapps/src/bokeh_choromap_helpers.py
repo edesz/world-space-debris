@@ -64,8 +64,8 @@ def create_choromap_figure(
     p.x_range.range_padding = 0
     p.y_range.range_padding = 0
     # Configure Plot title
-    p.title.text_font_size = "12pt"
-    p.title.text_font_style = "normal"
+    p.title.text_font_size = "14pt"
+    p.title.text_font_style = "bold"
     # Show color bar below plot
     p.add_layout(color_bar, "below")
     # GeoDataSource patch

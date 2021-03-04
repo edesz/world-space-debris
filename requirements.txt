@@ -1,9 +1,0 @@
-bokeh
-flask
-gunicorn
-requests
-pandas
-geopandas
-pycountry
-fastparquet
-pyarrow
