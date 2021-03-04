@@ -1,8 +1,8 @@
-bokeh
-requests
 numpy
+requests
 pandas
 geopandas
+bokeh
 pycountry
 fastparquet
 pyarrow
