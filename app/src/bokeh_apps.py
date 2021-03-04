@@ -13,11 +13,20 @@ from bokeh.themes import Theme
 
 from src.bokeh_choromap_helpers import bokeh_setup_create_choromap
 from src.utils import my_flatten
+from src.data_loader import get_geo_data
 
 PROJ_ROOT_DIR = os.getcwd()
 who_gho_processed_data_file_path = os.path.join(
     PROJ_ROOT_DIR, "data", "raw", "data.parquet.gzip"
 )
+# GeoData
+geo_data_dir = os.path.join(PROJ_ROOT_DIR, "data", "raw")
+geodata_shapefile_filepath = os.path.join(
+    geo_data_dir,
+    "ne_110m_admin_0_countries",
+    "ne_110m_admin_0_countries.shp",
+)
+gdf = get_geo_data(geodata_shapefile_filepath)
 
 # WHO, GHO data
 last_year_of_data = 2018

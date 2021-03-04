@@ -17,17 +17,8 @@ from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 
 import src.bokeh_apps as bk_apps
-from src.data_loader import get_geo_data
 
 PROJ_ROOT_DIR = os.getcwd()
-# GeoData
-geo_data_dir = os.path.join(PROJ_ROOT_DIR, "data", "raw")
-geodata_shapefile_filepath = os.path.join(
-    geo_data_dir,
-    "ne_110m_admin_0_countries",
-    "ne_110m_admin_0_countries.shp",
-)
-gdf = get_geo_data(geodata_shapefile_filepath)
 
 PORT = os.environ.get("PORT", 8000)
 

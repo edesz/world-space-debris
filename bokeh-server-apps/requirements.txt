@@ -1,0 +1,7 @@
+bokeh
+requests
+pandas
+geopandas
+pycountry
+fastparquet
+pyarrow

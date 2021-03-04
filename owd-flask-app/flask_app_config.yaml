@@ -1,0 +1,7 @@
+deploy: False
+deployed_bokeh_server_app_name: "bokeh-server-apps.herokuapp"
+standalone_bokeh_apps:
+   s1_ss1_map: bk_server_map_s1_ss1
+   s1_ss1_chart: bk_server_chart_s1_ss1
+   s1_ss2_map: bk_server_map_s1_ss2
+   s1_ss2_chart: bk_server_chart_s1_ss1
