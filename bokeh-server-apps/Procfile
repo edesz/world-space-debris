@@ -1,2 +1,1 @@
-release: python download_sample_data.py
-web: bokeh serve --address="0.0.0.0" --port=${PORT} bkapps/*.py --allow-websocket-origin=owd-flask-app.herokuapp.com
+web: python download_sample_data.py && bokeh serve --address="0.0.0.0" --port=${PORT} bkapps/*.py --allow-websocket-origin=owd-flask-app.herokuapp.com

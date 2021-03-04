@@ -6,29 +6,10 @@
 
 
 import os
-import shlex
-import subprocess
 
 from src.bokeh_choromap_helpers import bk_choromap_wrapper
 from src.data_loader import get_geo_data
 from src.utils import my_flatten
-
-
-def run_cmd(cmd: str) -> None:
-    print(cmd)
-    process = subprocess.Popen(
-        shlex.split(cmd), shell=False, stdout=subprocess.PIPE
-    )
-    while True:
-        output = process.stdout.readline()
-        if process.poll() is not None:
-            break
-        if output:
-            print(str(output.strip(), "utf-8"))
-    _ = process.poll()
-
-
-run_cmd("python download_sample_data.py")
 
 PROJ_ROOT_DIR = os.getcwd()
 # PROJ_ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
