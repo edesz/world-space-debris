@@ -123,7 +123,7 @@ def bk_choromap_wrapper(
     start_year_slider_value,
     cbar_low,
     cbar_high,
-    bk_theme_filepath,
+    bk_theme_filepath,  # comment out for local development
     fig_width=(850, 600),
 ):
     @lru_cache
@@ -195,4 +195,5 @@ def bk_choromap_wrapper(
 
     layout = bkm.Column(p, row(button, bkm.Column(slider)))
     curdoc().add_root(layout)
+    # Set theme - comment out below for local development
     curdoc().theme = Theme(filename=bk_theme_filepath)

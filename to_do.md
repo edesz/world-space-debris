@@ -1,2 +1,0 @@
-- 1-10 - colorbar color scale needs to be set based on ALL years' data
-- add line plot

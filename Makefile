@@ -30,12 +30,6 @@ build:
 	@tox -e build
 .PHONY: build
 
-## Run app
-app:
-	@echo "+ $@"
-	@tox -e app
-.PHONY: app
-
 ## Run Flask app
 flask:
 	@echo "+ $@"

@@ -11,8 +11,11 @@ from src.bokeh_choromap_helpers import bk_choromap_wrapper
 from src.data_loader import get_geo_data
 from src.utils import my_flatten
 
+# Deployment
 PROJ_ROOT_DIR = os.getcwd()
+# # Local Development
 # PROJ_ROOT_DIR = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+
 bk_theme_filepath = os.path.join(PROJ_ROOT_DIR, "theme.yaml")
 who_gho_processed_data_file_path = os.path.join(
     PROJ_ROOT_DIR, "data", "raw", "data.parquet.gzip"
@@ -51,6 +54,6 @@ bk_choromap_wrapper(
     start_year_slider_value,
     cbar_low,
     cbar_high,
-    bk_theme_filepath,
+    bk_theme_filepath,  # comment out for local development
     (850, 505),
 )
