@@ -52,7 +52,7 @@ A secondary objective is to deploy the simplified visualization built here to th
 
 ## [Future Improvements](#future-improvements)
 1.  Choromap colorbar scale needs to be set based on ALL years' data
-    -   to adjust this, change `cbar_low` and `cbar_high` using
+    -   to adjust this, in [`bk_server_map_s1_ss1.py`](https://github.com/edesz/world-space-debris/blob/main/bokeh-server-apps/bkapps/bk_server_map_s1_ss1.py) and [`bk_server_map_s1_ss2.py`](https://github.com/edesz/world-space-debris/blob/main/bokeh-server-apps/bkapps/bk_server_map_s1_ss2.py), change `cbar_low` and `cbar_high` using
         ```python
         cbar_low = df["Value"].min()
         cbar_high = df["Value"].max()
