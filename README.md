@@ -41,12 +41,14 @@ A secondary objective is to deploy the simplified visualization built here to th
 
 ## [Notes](#notes)
 1.  At the time of initial development of this project, [`numba` is not supported on Python 3.9](https://github.com/numba/numba/issues/5855) and so the [next supported version](https://devcenter.heroku.com/articles/python-support#supported-runtimes) of Python (3.8.8) was used.
-2.  This is work in progress. Currently, only boilerplate code is put in place. Active analysis is being conduced in `./Untitled.ipynb` (which uses data from the Boxscore section of the Space-Track API).
+2.  This is work in progress. Currently, only boilerplate code is put in place. Active analysis is being conducted in `./Untitled.ipynb` (which uses data from the Boxscore section of the Space-Track API).
 
 ## [Attributions](#attributions)
-1.  (Boilerplate content) [WHO GHO Dataset](https://apps.who.int/gho/data/node.main.A1022?lang=en) and (Space Debris) [Space-Track API](https://www.space-track.org/auth/login)
-2.  [Three letter country codes](https://laendercode.net/en/3-letter-list.html) (not used here, used the Python package [`pcountry`](https://pypi.org/project/pycountry/) instead)
-3.  As mentioned earlier, the primary motivation for this project was the analysis of world obesity, done by [Our World in Data](https://ourworldindata.org/obesity).
+1.  Datasets come from
+    -   (Boilerplate content) [WHO GHO Dataset](https://apps.who.int/gho/data/node.main.A1022?lang=en)
+    -   (Space Debris data) [Space-Track API](https://www.space-track.org/auth/login)
+3.  [Three letter country codes](https://laendercode.net/en/3-letter-list.html) (not used here, used the Python package [`pcountry`](https://pypi.org/project/pycountry/) instead)
+4.  As mentioned earlier, the primary motivation for this project was the analysis of world obesity, done by [Our World in Data](https://ourworldindata.org/obesity).
 
 ## [Future Improvements](#future-improvements)
 1.  Choromap colorbar scale needs to be set based on ALL years' data
