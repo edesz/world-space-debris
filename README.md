@@ -41,6 +41,7 @@ A secondary objective is to deploy the simplified visualization built here to th
 
 ## [Notes](#notes)
 1.  At the time of initial development of this project, [`numba` is not supported on Python 3.9](https://github.com/numba/numba/issues/5855) and so the [next supported version](https://devcenter.heroku.com/articles/python-support#supported-runtimes) of Python (3.8.8) was used.
+2.  This is work in progress. Currently, only boilerplate code is put in place. Active analysis is being conduced in `./Untitled.ipynb`.
 
 ## [Attributions](#attributions)
 1.  [WHO GHO Dataset](https://apps.who.int/gho/data/node.main.A1022?lang=en)
