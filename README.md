@@ -44,7 +44,7 @@ A secondary objective is to deploy the simplified visualization built here to th
 2.  This is work in progress. Currently, only boilerplate code is put in place. Active analysis is being conduced in `./Untitled.ipynb`.
 
 ## [Attributions](#attributions)
-1.  [WHO GHO Dataset](https://apps.who.int/gho/data/node.main.A1022?lang=en)
+1.  (Boilerplate content) [WHO GHO Dataset](https://apps.who.int/gho/data/node.main.A1022?lang=en) and (Space Debris) [Space-Track API](https://www.space-track.org/auth/login)
 2.  [Three letter country codes](https://laendercode.net/en/3-letter-list.html) (not used here, used the Python package [`pcountry`](https://pypi.org/project/pycountry/) instead)
 3.  As mentioned earlier, the primary motivation for this project was the analysis of world obesity, done by [Our World in Data](https://ourworldindata.org/obesity).
 
